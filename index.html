@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(5, 5, 90);
+
+        }
+
+        .main {
+            height: 100%;
+            background-image: url(./background-clouds.jpg);
+            background-size: cover;
+            margin: 0;
+            color: white;
+        }
+
+        .top {
+            height: 15%;
+            background-color: rgb(5, 5, 90);
+            display: flex;
+        }
+
+
+        .bottom {
+            height: 85%;
+            display: grid;
+            grid-template-columns: repeat(5, 20%);
+            grid-template-rows: repeat(1, 100%);
+            padding: 10px;
+            gap: 5px;
+        }
+
+        .dropbtn {
+          background-image: url(./sunrisesunsettime.jpg);
+          background-size: cover;
+          display: none;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+           }
+
+           .dropdown-content {
+           display: none;
+           position: absolute;
+           background-image: url(./CdBbiZ7.jpg);
+           background-size: cover;
+           min-width: 160px;
+           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+           z-index: 1;
+           }
+
+           .dropdown:hover .dropdown-content {
+           display: block;
+           }
+
+           .dropdown:hover .dropbtn {
+            background-color: #0d4054;
+           }
+
+           .dropdown-content a {
+           color: white;
+           padding: 12px 16px;
+           text-decoration: none;
+           display: block;
+           }
+
+           .dropdown-content h2:hover {background-color: #00bbffa7}
+
+        .item {
+            height: 98%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding-right: 0;
+            padding-left: 0;
+            border: 2px solid cornflowerblue;
+        }
+
+        .channel {
+            background-color: rgb(84, 84, 227);
+            padding: 5px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .address {
+            display: flex;
+            padding: 0;
+        }
+
+        .margin {
+            margin: 10px;
+        }
+
+        .bar {
+            height: 100%;
+            width: 50%;
+            margin-left: 50px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .status {
+            height: 100%;
+            width: 12%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-left: 50px;
+        }
+
+        .menu {
+            height: 30%;
+        }
+
+        .icon {
+            height: 20%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+
+       .drop {
+        height: 20px;
+       }
+       
+       .humidity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+
+     .color {
+        color: aqua;
+     }
+
+     span {
+        font-weight: 900;
+        color: rgb(244, 244, 244);
+        
+     }
+
+     .date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     }
+      
+     @media (max-width:680px) {
+
+        body {
+            height: 100%;
+        }
+        .bottom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top {
+            font-size: 16px;
+            justify-content: space-between;
+        }
+
+        .bar {
+            display: none;
+        }
+
+        .item {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .icon {
+            height: 100px;
+        }
+
+        .menu {
+            height: 20px;
+        }
+
+        .dropbtn {
+            display: block;
+     }
+
+     .margin {
+        font-size: 10px;
+     }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="channel">
+             <h2>The Weather Channel</h2>
+            </div>
+            <div>
+                <h3 class="margin">Vinings, GA</h3>
+                <p class="margin">Atlana, GA 30339</p>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <h2>Radar</h2>
+                    <h2>Now</h2>
+                    <h2>Videos</h2>
+                    <h2>Forcast</h2>
+                    <h2>News</h2>
+                </div>
+              </div>
+            <div class="bar">
+               <h2>Radar</h2>
+               <h2>Now</h2>
+               <h2>Videos</h2>
+               <h2>Forcast</h2>
+               <h2>News</h2>
+            </div>
+            <div class="status">
+                <img class="menu" src="./icons8-plus-50.png" alt="plus">
+                <img class="menu" src="./icons8-three-dots-50.png" alt="menu">
+                <img class="menu" src="./icons8-present-50.png" alt="notification">
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="item">
+                <div class="date">
+                  <h3 class="color">Today</h3>
+                  <p>December 4</p>
+                </div>
+                <img class="icon" src="./cloudy.png" alt="partialy cloudy">
+                <h2>Partially Cloudy</h2>
+                <h2><span>67</span> &deg/50 &deg</h2>
+                <div class="humidity">
+                  <img class="drop" src="./drop.png" alt="humidity">
+                  <p>20%</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="date">
+                  <h3 class="color">Today</h3>
+                  <p>December 4</p>
+                </div>
+                <img class="icon" src="./cloudy.png" alt="partialy cloudy">
+                <h2>Partially Cloudy</h2>
+                <h2><span>67</span> &deg/50 &deg</h2>
+                <div class="humidity">
+                  <img class="drop" src="./drop.png" alt="humidity">
+                  <p>20%</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="date">
+                  <h3 class="color">Today</h3>
+                  <p>December 4</p>
+                </div>
+                <img class="icon" src="./cloudy.png" alt="partialy cloudy">
+                <h2>Partially Cloudy</h2>
+                <h2><span>67</span> &deg/50 &deg</h2>
+                <div class="humidity">
+                  <img class="drop" src="./drop.png" alt="humidity">
+                  <p>20%</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="date">
+                  <h3 class="color">Today</h3>
+                  <p>December 4</p>
+                </div>
+                <img class="icon" src="./cloudy.png" alt="partialy cloudy">
+                <h2>Partially Cloudy</h2>
+                <h2><span>67</span> &deg/50 &deg</h2>
+                <div class="humidity">
+                  <img class="drop" src="./drop.png" alt="humidity">
+                  <p>20%</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="date">
+                  <h3 class="color">Today</h3>
+                  <p>December 4</p>
+                </div>
+                <img class="icon" src="./cloudy.png" alt="partialy cloudy">
+                <h2>Partially Cloudy</h2>
+                <h2><span>67</span> &deg/50 &deg</h2>
+                <div class="humidity">
+                  <img class="drop" src="./drop.png" alt="humidity">
+                  <p>20%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
